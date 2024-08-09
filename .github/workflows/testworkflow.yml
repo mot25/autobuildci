@@ -23,4 +23,7 @@ jobs:
           node-version: '18'
       - name: install packet from package.json
         run: npm install
-
+      - name: "Build Android project"
+        uses: vgaidarji/android-github-actions-build@v1.0.1
+        with:
+          args: "./android/gradlew assembleDebug"
