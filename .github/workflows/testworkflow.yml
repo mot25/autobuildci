@@ -12,3 +12,7 @@ jobs:
           node-version: '18'
       - run: npm install -g bats
       - run: bats -v
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - run: bats -v
