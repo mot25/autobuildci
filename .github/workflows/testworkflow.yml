@@ -15,4 +15,12 @@ jobs:
   build-apk:
     runs-on: ubuntu-latest
     steps:
-      - run: bats -v
+      - name: clone repo
+        uses: actions/checkout@v4
+      - name: install node 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: install packet from package.json
+        run: npm install
+
