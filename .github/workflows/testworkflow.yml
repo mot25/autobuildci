@@ -24,7 +24,7 @@ jobs:
       - name: install packet from package.json
         run: npm install
       - run: cd android && chmod +x gradlew
-      - name: React Native Build
+      - name: React Native Build test
         uses: bamachoub/react-native-build-action@v1.0.0
         with:
           keystore-name: debug.keystore
