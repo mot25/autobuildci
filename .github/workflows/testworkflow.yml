@@ -3,15 +3,15 @@ run-name: ${{github.actor}} is run name
 on:
   - push
 jobs:
-  check-bat-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-      - run: npm install -g bats
-      - run: bats -v
+#  check-bat-version:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: actions/setup-node@v4
+#        with:
+#          node-version: '18'
+#      - run: npm install -g bats
+#      - run: bats -v
   build-apk:
     runs-on: ubuntu-latest
     steps:
@@ -24,7 +24,7 @@ jobs:
       - name: install packet from package.json
         run: npm install
       - run: cd android && chmod +x gradlew
-      - name: "Build Android project"
-        uses: vgaidarji/android-github-actions-build@v1.0.1
+      - name: React Native Build
+        uses: bamachoub/react-native-build-action@v1.0.0
         with:
-          args: "ls && ./android/gradlew assembleDebug"
+          keystore-name: debug.keystore
